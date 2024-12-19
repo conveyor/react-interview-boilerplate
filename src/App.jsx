@@ -1,10 +1,16 @@
 import { useState } from 'react'
+import { useFetch } from 'use-http'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+
+
+  // The last argument [] means it will run onMount. If you pass it a variable like [someVariable], it will run onMount and again whenever someVariable changes values
+  const { loading, error, data = '' } = useFetch("https://glowing-space-orbit-77x77x7q4rcwx64-3000.app.github.dev/", {}, []);
+
 
   return (
     <>
