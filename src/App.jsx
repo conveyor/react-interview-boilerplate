@@ -7,9 +7,11 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(0)
 
-
+  // Feel free to use any `fetch` method you'd like. `use-http` is included only because the hook based interface was easy
+  // to integrate with the boilerplate code. 
+  // 
   // The last argument [] means it will run onMount. If you pass it a variable like [someVariable], it will run onMount and again whenever someVariable changes values
-  const { loading, error, data = '' } = useFetch("https://glowing-space-orbit-77x77x7q4rcwx64-3000.app.github.dev/", {}, []);
+  const { get, post, loading, error, data = '' } = useFetch("https://backend.example.com", {}, []);
 
 
   return (
